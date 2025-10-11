@@ -1,0 +1,658 @@
+/* ==================================== */
+/* ===== 0. Custom CSS Variables (Fixes GitHub Color Issue) ===== */
+/* ==================================== */
+:root {
+    --main-color: #00bcd4; /* Primary Accent Color (Teal/Cyan) */
+    --bg-color: #0b0c10; /* Main Dark Background */
+    --secondary-bg-color: #1f2833; /* Slightly lighter background for cards/sections */
+}
+
+/* ==================================== */
+/* ===== 1. Global & General Styles ===== */
+/* ==================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Enables smooth scroll behavior when clicking nav links */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Apply this to all sections for full-height visual separation */
+.home, 
+.about, 
+.skills, 
+.experience, 
+.projects, 
+.resume, 
+.contact,
+.education {
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 80px 10%; 
+}
+
+
+/* ===== Header ===== */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9); /* Slightly darker, more opaque */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 10%; /* Use 10% for consistency */
+    z-index: 1000;
+}
+
+/* recent */
+
+
+.logo {
+    color: var(--main-color);
+    font-size: 26px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+/* ===== Hamburger Menu ===== */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===== Section Headings ===== */
+.heading {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px; /* Increased margin for better separation */
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+/* ========================================= */
+/* ===== 2. Home Section & Animation Styles ===== */
+/* ========================================= */
+
+.home {
+    /* Override for specific vertical alignment */
+    justify-content: space-around;
+    flex-direction: row; /* Desktop layout */
+    padding-top: 20vh;
+}
+
+.home-content {
+    max-width: 600px;
+    color: #ededed;
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.home-content h1 span {
+    color: var(--main-color);
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    color: var(--main-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.home-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    object-fit: cover;
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.8);
+}
+
+/* Typing Animation Cursor */
+.text-animate {
+    color: var(--main-color); 
+    /* Creates the blinking cursor effect */
+    border-right: 3px solid var(--main-color);
+    animation: blinkCursor 0.7s steps(44) infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--main-color);
+    }
+}
+
+/* Social Icons Styling */
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: var(--main-color);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.social-icons a:hover {
+    background: var(--main-color);
+    color: var(--secondary-bg-color);
+    box-shadow: 0 0 15px var(--main-color);
+    transform: scale(1.1);
+}
+
+/* Button Styling (.btn) */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    border-radius: 40px;
+    box-shadow: 0 0 15px var(--main-color);
+    font-size: 1rem;
+    color: var(--bg-color);
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 5px var(--main-color);
+    opacity: 0.9;
+}
+
+
+/* ========================================= */
+/* ===== 3. Skills Section (With Hover) ===== */
+/* ========================================= */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px auto 0; 
+    max-width: 1200px;
+    padding: 0 10px;
+}
+
+.skill-category {
+    width: calc(50% - 30px); /* Adjust to 30px if using gap: 30px, or keep 15px for margin */
+    padding: 25px;
+    background: var(--secondary-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.skill-category:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 0 25px var(--main-color); 
+}
+
+.skill-category h3 {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    padding: 8px 15px;
+    background: var(--bg-color);
+    color: #ededed;
+    font-size: 0.95rem;
+    border-radius: 20px;
+    border: 1px solid #555;
+    transition: background 0.3s, transform 0.3s; 
+    white-space: nowrap; 
+}
+
+.skill-item:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ========================================= */
+/* ===== 4. Projects Section (With Hover) ===== */
+/* ========================================= */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-item {
+    background: var(--secondary-bg-color);
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    border: 2px solid var(--main-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.4); 
+    border: 3px solid var(--main-color);
+    background: #2a3440; 
+}
+
+
+/* ========================================= */
+/* ===== 5. Education & Experience Timeline (With Hover) ===== */
+/* ========================================= */
+.education-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.education-timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    bottom: 0;
+    left: 50%; 
+    margin-left: -3px;
+    z-index: -1;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-dot {
+    height: 15px;
+    width: 15px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    border: 3px solid var(--bg-color);
+    top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
+.timeline-item:nth-child(odd) .timeline-dot { right: -7.5px; }
+.timeline-item:nth-child(even) .timeline-dot { left: -7.5px; }
+
+.timeline-content {
+    padding: 20px 30px;
+    background: var(--secondary-bg-color);
+    position: relative;
+    border-radius: 6px;
+    border-left: 5px solid var(--main-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease; /* Transition for hover */
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--main-color); 
+    border-left: 7px solid var(--main-color); 
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.3); 
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 5px;
+}
+
+.timeline-content .date {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Arrow styling */
+.timeline-item:nth-child(odd) .timeline-content::after { /* ... */ }
+.timeline-item:nth-child(even) .timeline-content::after { /* ... */ }
+
+/* Experience Section uses the same item styling */
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.experience-item {
+    background: var(--secondary-bg-color);
+    padding: 20px;
+    width: 300px;
+    border-radius: 20px;
+    border: 2px solid var(--main-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.4); 
+    border: 3px solid var(--main-color);
+    background: #2a3440; 
+}
+
+
+/* ========================================= */
+/* ===== 6. Resume Section (With Hover) ===== */
+/* ========================================= */
+
+.resume-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.resume-summary {
+    flex: 1 1 500px;
+    padding: 30px;
+    background: var(--secondary-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-summary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 171, 240, 0.4); 
+}
+
+.resume-download {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    background: var(--secondary-bg-color);
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.resume-download:hover {
+    transform: translateY(-5px);
+    border-color: #ededed;
+    box-shadow: 0 5px 20px rgba(0, 171, 240, 0.6); 
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+}
+
+/* Certification List */
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.cert-list li {
+    background-color: var(--bg-color);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #ededed;
+}
+
+.cert-link {
+    font-size: 0.9rem;
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.cert-link:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* ========================================= */
+/* ===== 7. Contact Section (With Focus/Hover) ===== */
+/* ========================================= */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ededed;
+    transition: color 0.3s ease;
+}
+
+.contact-info p i {
+    margin-right: 10px;
+    color: var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.contact-info p:hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.contact-info p:hover i {
+    transform: translateX(-5px);
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-bg-color);
+    background-color: var(--bg-color);
+    color: #ededed;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ensures they fill the form width */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px rgba(0, 171, 240, 0.8);
+}
+
+.contact-form .btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 5px 15px var(--main-color);
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #000;
+}
+
+
+/* ========================================= */
+/* ===== 8. Responsive Design (Media Queries) ===== */
+/* ========================================= */
+
+@media (max-width: 900px) {
+    .header {
+        padding: 18px 5%;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-radius: 0 0 0 20px;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .home {
+        flex-direction: column;
+        padding-top: 150px; /* Give space for fixed header */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-img {
+        margin-top: 50px;
+    }
+
+    /* Skills: Switch to single column */
+    .skill-category {
+        width: 100%; 
+        margin: 15px 0;
+    }
+    
+    /* Education: Switch to single column */
+    .education-timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot,
+    .timeline-item:nth-child(odd) .timeline-dot {
+        left: 24px;
+        right: auto;
+    }
+    
+    /* Resume: Stack columns */
+    .resume-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+    .home-content h3 {
+        font-size: 1.5rem;
+    }
+    .projects-container, .experience-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item, .experience-item {
+        width: 90%;
+    }
+}
