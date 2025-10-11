@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADHU U C | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome & Boxicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- ===== Header Section ===== -->
+    <header class="header">
+        <a href="#" class="logo">Madhu U C</a>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== Home Section ===== -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm <span>Madhu U C</span></h1>
+            <h3>Java Developer | MCA Student</h3>
+            <p>I'm passionate about building software solutions using Java, Spring Boot, and web technologies. I’m currently pursuing MCA and developing my skills in full-stack development.</p>
+            <a href="#contact" class="btn">Contact Me</a>
+           <div class="social-icons">
+        <a href="https://www.linkedin.com/in/madhuuc" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:madhuuc@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/madhuuc" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+
+        </div>
+
+        <div class="home-img">
+            <img src="C:\Applications\portfolio\images\madhu.jpg"alt="Madhu U C">        
+        </div>
+    </section>
+   
+</div>
+
+
+    <!-- ===== About Section ===== -->
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <p>I'm an MCA student with a strong interest in Java </p>
+        <p> programming, data structures, and software development.</p>
+        <p>  My goal is to become a skilled full-stack developer and </p>
+         <p> work on innovative projects that make an impact.</p>
+    </section>
+
+    <!-- ===== Skills Section ===== -->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <div class="skills-container">
+            <div class="skill">Java</div>
+            <div class="skill">Python</div>
+            <div class="skill">JavaScript</div>
+
+            <div class="skill">Spring Boot</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">SQL / PostgreSQL</div>
+            <div class="skill">Git & GitHub</div>
+        </div>
+    </section>
+
+    <!-- ===== Projects Section ===== -->
+    <section class="projects" id="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <h3>Farmer Friend (Web App)</h3>
+                <p>A PHP and MySQL-based web project helping farmers connect and share resources.</p>
+            </div>
+            <div class="project-item">
+                <h3>CRUD App with Java & PostgreSQL</h3>
+                <p>A simple CRUD application demonstrating database connectivity and GUI using Swing.</p>
+            </div>
+            <div class="project-item">
+                <h3>Portfolio Website</h3>
+                <p>This portfolio built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Experience Section ===== -->
+    <section class="experience" id="experience">
+        <h2 class="heading">My <span>Experience</span></h2>
+        <div class="experience-container">
+            <div class="experience-item">
+                <h3>Web Development Intern</h3>
+                <p>Completed a 1-month internship working on PHP-based web applications and frontend design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> mmadhuuc@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 8197163782</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+            </div>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <p>© 2025 Madhu U C | All Rights Reserved</p>
+    </footer>
+
+    <!-- ===== Script ===== -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.querySelector('.navbar');
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
