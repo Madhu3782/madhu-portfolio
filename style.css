@@ -198,6 +198,158 @@ body {
     width: 300px;
     border: 2px solid #00bcd4;
 }
+/* Education Design */
+/* ==================================== */
+/* ===== Education Section Styles ===== */
+/* ==================================== */
+
+.education {
+    padding: 100px 10%; /* Adjust padding as needed for your site */
+}
+
+.education-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* The vertical line */
+.education-timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--main-color, #00abf0); /* Placeholder for your main color */
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Center the line */
+    margin-left: -3px;
+    z-index: -1; /* Keep the line behind the content */
+}
+
+/* Container around content */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Dots on the line */
+.timeline-dot {
+    height: 15px;
+    width: 15px;
+    background-color: var(--main-color, #00abf0); /* Placeholder for your main color */
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    border: 3px solid var(--bg-color, #1f242d); /* Background color of your page */
+    top: 25px;
+}
+
+/* Place the timeline items to the left and right */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Style the dots for left and right items */
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -7.5px; /* Half the dot width to center it on the line */
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -7.5px; /* Half the dot width to center it on the line */
+}
+
+/* Content box styling */
+.timeline-content {
+    padding: 20px 30px;
+    background: var(--secondary-bg-color, #323946); /* A slightly darker background than the page */
+    position: relative;
+    border-radius: 6px;
+    border-left: 5px solid var(--main-color, #00abf0);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: var(--main-color, #00abf0);
+    margin-bottom: 5px;
+}
+
+.timeline-content .date {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #ededed;
+}
+
+.timeline-content .details {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Arrow/tail to point to the line (optional but good for style) */
+.timeline-item:nth-child(odd) .timeline-content::after {
+    content: " ";
+    position: absolute;
+    right: -10px;
+    top: 28px;
+    border: medium solid var(--secondary-bg-color, #323946);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--secondary-bg-color, #323946);
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: " ";
+    position: absolute;
+    left: -10px;
+    top: 28px;
+    border: medium solid var(--secondary-bg-color, #323946);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--secondary-bg-color, #323946) transparent transparent;
+}
+
+
+/* Media queries for responsiveness (Single column on smaller screens) */
+@media screen and (max-width: 768px) {
+    .education-timeline::after {
+        left: 31px; /* Move the vertical line to the left */
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+
+    /* Move dots to the left for all items */
+    .timeline-item:nth-child(even) .timeline-dot,
+    .timeline-item:nth-child(odd) .timeline-dot {
+        left: 24px;
+        right: auto;
+    }
+    
+    /* Remove and re-add the arrow/tail for single column view */
+    .timeline-item:nth-child(odd) .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        border-color: transparent var(--secondary-bg-color, #323946) transparent transparent;
+        left: -10px;
+        right: auto;
+    }
+}
 
 /* ===== Experience Section ===== */
 .experience {
